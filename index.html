@@ -1,216 +1,473 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <div class="container">
-                <h1 class="logo">My Portfolio</h1>
-                <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodePrince Digital | Frontend Developer</title>
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+  <body>
+
+    <header class="navbar">
+      <div class="logo">
+        <span class="logo-icon">
+          <i class="fa-solid fa-code"></i>
+        </span>
+
+        <div>
+          <h2>CodePrince</h2>
+          <p>Digital</p>
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+
+          <li><a href="#about">About</a></li>
+
+          <li><a href="#services">Services</a></li>
+
+          <li><a href="#projects">Projects</a></li>
+
+          <li><a href="#skills">Skills</a></li>
+
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="#contact" class="nav-btn"> Let's Talk </a>
     </header>
 
-    <section id="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h2>Hello, I'm <span class="highlight">Yusuf Abdhadeel olamilekan</span></h2>
-                <p class="hero-subtitle">A passionate developer creating amazing web experiences</p>
-                <a href="#contact" class="btn">Get In Touch</a>
-            </div>
-            <div class="hero-image">
-                <img src="selfie.png" alt="Profile Picture">
-            </div>
+    <section class="hero" id="home">
+      <div class="hero-left">
+        <span class="tag"> Frontend Developer </span>
+
+        <h1>
+          I Build Modern Websites That Help Businesses
+          <span>Grow Online.</span>
+        </h1>
+
+        <p>
+          Hi, I'm Yusuf, a frontend web developer based in Nigeria. I create
+          fast, responsive and professional websites that help businesses
+          attract customers and build trust.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#projects" class="primary-btn"> View My Work </a>
+
+          <a href="#contact" class="secondary-btn"> Hire Me </a>
         </div>
-    </section>
-    <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I'm a full-stack developer with a passion for creating beautiful and functional web applications. With expertise in modern web technologies, I bring ideas to life through clean code and innovative solutions.</p>
-                    <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or playing or watching football.</p>
-                </div>
-                <div class="about-stats">
-                    <div class="stat">
-                        <h3>5+</h3>
-                        <p>Years Experience</p>
-                    </div>
-                    <div class="stat">
-                        <h3>50+</h3>
-                        <p>Projects Completed</p>
-                    </div>
-                    <div class="stat">
-                        <h3>30+</h3>
-                        <p>Happy Clients</p>
-                    </div>
-                </div>
-            </div>
+
+        <div class="social-icons">
+          <a href="https://github.com/yusufabdhadeel-bot">
+            <i class="fab fa-github"></i>
+          </a>
+
+          <a href="https://www.linkedin.com/in/yusuf-abdul-hadeel-908aa8365/">
+            <i class="fab fa-linkedin"></i>
+          </a>
+
+          <a href="https://wa.me/2348067606279" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+
+          <a href="https://mail.google.com/mail/?view=cm&to=yusufabdhadeel@gmail.com" target="_blank">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
         </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="image-ring"></div>
+
+        <img src="images/selfie.png" alt="Yusuf" />
+
+        <div class="availability-card">
+          <span class="green-dot"></span>
+
+          Available For Freelance Projects
+        </div>
+      </div>
     </section>
 
-    <section id="skills">
-        <div class="container">
-            <h2>My Skills</h2>
-            <div class="skills-grid">
-                <div class="skill">
-                    <i class="fab fa-html5"></i>
-                    <h3>HTML5</h3>
-                    <p>Expert in semantic markup and accessibility</p>
-                </div>
-                <div class="skill">
-                    <i class="fab fa-css3-alt"></i>
-                    <h3>CSS3</h3>
-                    <p>Proficient in responsive design and animations</p>
-                </div>
-                <div class="skill">
-                    <i class="fab fa-js-square"></i>
-                    <h3>JavaScript</h3>
-                    <p>Skilled in ES6+ and modern frameworks</p>
-                </div>
-                <div class="skill">
-                    <i class="fab fa-react"></i>
-                    <h3>React</h3>
-                    <p>Building dynamic user interfaces</p>
-                </div>
-                <div class="skill">
-                    <i class="fab fa-node-js"></i>
-                    <h3>Node.js</h3>
-                    <p>Server-side development and APIs</p>
-                </div>
-                <div class="skill">
-                    <i class="fab fa-python"></i>
-                    <h3>Python</h3>
-                    <p>Data analysis and backend development</p>
-                </div>
-            </div>
+    <section class="about" id="about">
+      <div class="section-title">
+        <span>ABOUT ME</span>
+
+        <h2>Building Solutions That Make An Impact</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I specialize in building modern, responsive and user-friendly
+            websites using HTML, CSS and JavaScript. My goal is to help
+            businesses establish a strong online presence through clean design
+            and fast performance.
+          </p>
         </div>
+
+        <div class="about-cards">
+          <div class="about-card">
+            <i class="fa-solid fa-code"></i>
+
+            <h3>6+</h3>
+
+            <p>Personal Projects</p>
+          </div>
+
+          <div class="about-card">
+            <i class="fa-solid fa-laptop-code"></i>
+
+            <h3>Frontend</h3>
+
+            <p>Developer</p>
+          </div>
+
+          <div class="about-card">
+            <i class="fa-solid fa-rocket"></i>
+
+            <h3>Open</h3>
+
+            <p>To Freelance Work</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="projects">
-        <div class="container">
-            <h2>My Projects</h2>
-            <div class="projects-grid">
-                <div class="project">
-                    <div class="project-info">
-                        <h3>E-commerce Website</h3>
-                        <p>A full-stack e-commerce platform built with React and Node.js</p>
-                        <div class="project-links">
-                            <a href="#" class="btn-small">Live Demo</a>
-                            <a href="https://github.com/yusufabdhadeel-bot" class="btn-small">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project">
-                    <div class="project-info">
-                        <h3>Task Management App</h3>
-                        <p>A productivity app for managing daily tasks and projects</p>
-                        <div class="project-links">
-                            <a href="#" class="btn-small">Live Demo</a>
-                            <a href="https://github.com/yusufabdhadeel-bot" class="btn-small">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project">
-                    <div class="project-info">
-                        <h3>Password Generator</h3>
-                        <p>A simple yet effective password generator with customizable options</p>
-                        <div class="project-links">
-                            <a href="https://genrandompasswords.netlify.app/" class="btn-small">Live Demo</a>
-                            <a href="https://github.com/yusufabdhadeel-bot" class="btn-small">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project">
-                    <div class="project-info">
-                        <h3>Weather Dashboard</h3>
-                        <p>A responsive weather app with location-based forecasts</p>
-                        <div class="project-links">
-                            <a href="#" class="btn-small">Live Demo</a>
-                            <a href="https://github.com/yusufabdhadeel-bot" class="btn-small">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project">
-                    <div class="project-info">
-                        <h3>Cryptocurrency app</h3>
-                        <p>A fully functional cryptocurrency app with seven different cryptocurrencies, including their realtime prices and market cap along with other functionalities.  </p>
-                        <div class="project-links">
-                            <a href="https://btcpricechecker.netlify.app" class="btn-small">Live Demo</a>
-                            <a href="https://github.com/yusufabdhadeel-bot" class="btn-small">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project">
-                    <div class="project-info">
-                        <h3>A complete school website</h3>
-                        <p>A responsive school website with multiple pages and features</p>
-                        <div class="project-links">
-                            <a href="https://thenicheacademy.netlify.app/" class="btn-small">Live Demo</a>
-                            <a href="https://github.com/yusufabdhadeel-bot" class="btn-small">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section class="services" id="services">
+      <div class="section-title">
+        <span>SERVICES</span>
+
+        <h2>What I Can Help You With</h2>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <i class="fa-solid fa-globe"></i>
+          <h3>Business Websites</h3>
+          <p>Professional websites for businesses.</p>
         </div>
+
+        <div class="service-card">
+          <i class="fa-solid fa-shop"></i>
+          <h3>E-commerce Websites</h3>
+          <p>Sell products online with ease.</p>
+        </div>
+
+        <div class="service-card">
+          <i class="fa-solid fa-utensils"></i>
+          <h3>Restaurant Websites</h3>
+          <p>Menus, bookings and online presence.</p>
+        </div>
+
+        <div class="service-card">
+          <i class="fa-solid fa-hotel"></i>
+          <h3>Hotel Websites</h3>
+          <p>Modern hospitality websites.</p>
+        </div>
+
+        <div class="service-card">
+          <i class="fa-solid fa-screwdriver-wrench"></i>
+          <h3>Website Maintenance</h3>
+          <p>Keep your site updated and secure.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="projects">
+      <div class="section-title">
+        <span>PROJECTS</span>
+
+        <h2>Featured Projects</h2>
+      </div>
+
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <img src="images/school.jpg" alt=" A school website" />
+
+          <div class="project-content">
+            <h3>School Website</h3>
+
+            <p>
+              Complete educational website with multiple pages and responsive
+              design.
+            </p>
+
+            <div class="project-links">
+              <a href="https://thenicheacademy.netlify.app/" target="_blank">Live Demo</a>
+
+              <a href="https://github.com/yusufabdhadeel-bot/The-Niche-Academy" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="images/ecommerce.jpg" alt=" e commerce website" />
+
+          <div class="project-content">
+            <h3>E-commerce Website</h3>
+
+            <p>Modern online store with product showcase.</p>
+
+            <div class="project-links">
+              <a href="https://novastoreec.netlify.app/" target="_blank">Live Demo</a>
+
+              <a href="https://github.com/yusufabdhadeel-bot/e-commerce-website" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="images/crypto.jpg" alt=" A cryptocurrency tracking app" />
+
+          <div class="project-content">
+            <h3>Crypto App</h3>
+
+            <p>Real-time cryptocurrency tracking dashboard.</p>
+
+            <div class="project-links">
+              <a href="https://btcpricechecker.netlify.app/" target="_blank">Live Demo</a>
+
+              <a href="https://github.com/yusufabdhadeel-bot/BTC-Price">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="images/restaurant.jpg" alt="" />
+
+          <div class="project-content">
+            <h3>Restaurant Website</h3>
+
+            <p>Elegant restaurant website with menu showcase.</p>
+
+            <div class="project-links">
+              <a href="https://blueflames.netlify.app/" target="_blank">Live Demo</a>
+
+              <a href="https://github.com/yusufabdhadeel-bot/restaurant-demo" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="images/hotel.jpg" alt=" A luxury hotel website" />
+
+          <div class="project-content">
+            <h3>Hotel Website</h3>
+
+            <p>Luxury hotel website with booking features.</p>
+
+            <div class="project-links">
+              <a href="https://luxe1hotel.netlify.app/" target="_blank">Live Demo</a>
+
+              <a href="https://github.com/yusufabdhadeel-bot/hotel-demo" target ="_blank">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SKILLS -->
+
+    <section class="skills" id="skills">
+      <div class="section-title">
+        <span>SKILLS & TOOLS</span>
+
+        <h2>Technologies I Work With</h2>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <i class="fab fa-html5"></i>
+          <h4>HTML5</h4>
+        </div>
+
+        <div class="skill-card">
+          <i class="fab fa-css3-alt"></i>
+          <h4>CSS3</h4>
+        </div>
+
+        <div class="skill-card">
+          <i class="fab fa-js"></i>
+          <h4>JavaScript</h4>
+        </div>
+
+        <div class="skill-card">
+          <i class="fab fa-git-alt"></i>
+          <h4>Git</h4>
+        </div>
+
+        <div class="skill-card">
+          <i class="fab fa-github"></i>
+          <h4>GitHub</h4>
+        </div>
+
+        <div class="skill-card">
+          <i class="fas fa-mobile-alt"></i>
+          <h4>Responsive Design</h4>
+        </div>
+
+        <div class="skill-card">
+          <i class="fas fa-cloud"></i>
+          <h4>Netlify</h4>
+        </div>
+
+        <div class="skill-card">
+          <i class="fas fa-code"></i>
+          <h4>VS Code</h4>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+
+    <section class="cta">
+      <div class="cta-box">
+        <div>
+          <h2>Need A Professional Website For Your Business?</h2>
+
+          <p>Let's discuss your project and bring your ideas to life.</p>
+        </div>
+
+        <a href="#contact" class="cta-btn"> Get A Free Consultation </a>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="section-title">
+        <span>TESTIMONIALS</span>
+
+        <h2>What Others Say</h2>
+      </div>
+
+      <div class="testimonial-card">
+        <p>
+          Demo project built to showcase modern business website design and user
+          experience.
+        </p>
+
+        <h4>— CodePrince Digital</h4>
+      </div>
     </section>
 
     <section id="contact">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <p><a href="https://mail.google.com/mail/?view=cm&to=yusufabdhadeel@gmail.com&su=inquiry%20From%20potfolio&body=Hello,%0D%0AI%20would%20like%20to%20ask%20about%20your%20employment%20status" target="_blank" rel="noopener noreferrer">yusufabdhadeel@gmail.com</a></p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <p><a href="tel:+2348067606279">+234 8067606279</a></p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>Lagos state, Nigeria</p>
-                    </div>
-                </div>
-                <form class="contact-form" id="contactForm" method="POST" action="https://formspree.io/f/xyz123abc">
-                    <input type="text" name="name" placeholder="Your Name" required class="message">
-                    <input type="email" name="email" placeholder="Your Email" required id="email">
-                    <textarea name="message" placeholder="Your Message" required class="message"></textarea>
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
+      <div class="section-title">
+        <span>CONTACT</span>
+
+        <h2>Let's Work Together</h2>
+      </div>
+
+      <div class="contact-container">
+        <div class="contact-info">
+          <div class="contact-box">
+            <i class="fas fa-envelope"></i>
+
+            <div>
+              <h4>Email</h4>
+              <p>yusufabdhadeel@gmail.com</p>
             </div>
+          </div>
+
+          <div class="contact-box">
+            <i class="fas fa-phone"></i>
+
+            <div>
+              <h4>Phone</h4>
+              <p>+234 8067606279</p>
+            </div>
+          </div>
+
+          <div class="contact-box">
+            <i class="fas fa-location-dot"></i>
+
+            <div>
+              <h4>Location</h4>
+              <p>Lagos, Nigeria</p>
+            </div>
+          </div>
+
+          <div class="contact-box">
+            <i class="fas fa-clock"></i>
+
+            <div>
+              <h4>Response Time</h4>
+              <p>Within 24 Hours</p>
+            </div>
+          </div>
         </div>
+
+        <form
+          class="contact-form"
+          action="https://formspree.io/f/xyz123abc"
+          method="POST"
+        >
+          <input type="text" placeholder="Your Name" required />
+
+          <input type="email" placeholder="Your Email" required />
+
+          <textarea placeholder="Your Message" required></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
     </section>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2026 YUSUF ABDHADEEL. All rights reserved.</p>
-            <div class="social-links">
-                <a href="https://github.com/yusufabdhadeel-bot"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/yusuf-abdhadeel-908aa8365?utm_source=share_via&utm_content=profile&utm_medium"><i class="fab fa-linkedin"></i></a>
-                <a href="https://x.com/zed480708"><i class="fab fa-x-twitter"></i></a>
-            </div>
+      <div class="logo">
+        <span class="logo-icon">
+          <i class="fa-solid fa-code"></i>
+        </span>
+
+        <div>
+          <h2>CodePrince</h2>
+
+          <p>Digital</p>
         </div>
+      </div>
+
+      <br />
+
+      <p>© 2026 CodePrince Digital. All Rights Reserved.</p>
+
+      <br />
+
+      <div class="social-icons">
+        <a href="https://github.com/yusufabdhadeel-bot">
+          <i class="fab fa-github"></i>
+        </a>
+
+        <a href="https://www.linkedin.com/in/yusuf-abdhadeel-908aa8365/">
+          <i class="fab fa-linkedin"></i>
+        </a>
+
+        <a href="https://wa.me/2348067606279">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+
+          <a href="https://mail.google.com/mail/?view=cm&to=yusufabdhadeel@gmail.com" target="_blank">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
     </footer>
 
+    <a href="https://wa.me/2348067606279" class="whatsapp-btn" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
