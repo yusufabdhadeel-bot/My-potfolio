@@ -76,7 +76,7 @@ I'm always open to freelance opportunities, internships, and full-time frontend 
 
 Portfolio: https://yusufabdhadeel.netlify.app
 GitHub: https://github.com/yusufabdhadeel-bot/My-potfolio/
-LinkedIn: https://linked.com/in/yusufabdhadeel
+LinkedIn: https://www.linked.com/in/yusufabdhadeel
 Email: yusufabdhadeel@gmail.com
 
 License
