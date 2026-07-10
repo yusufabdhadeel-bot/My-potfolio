@@ -88,3 +88,4 @@ Support
 If you found this project helpful or inspiring, consider giving it a star on GitHub.
 
 Thank you for visiting my portfolio!
+<img width="1351" height="643" alt="image" src="https://github.com/user-attachments/assets/44a4eb7f-1ddf-4940-b665-8e586669a3e3" />
