@@ -85,6 +85,6 @@ Feel free to fork this repository for learning purposes, but please do not copy 
 
 Support
 
-If you found this project helpful or inspiring, consider giving it a ⭐ on GitHub.
+If you found this project helpful or inspiring, consider giving it a star on GitHub.
 
 Thank you for visiting my portfolio!
