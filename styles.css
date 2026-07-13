@@ -358,10 +358,6 @@ nav a:hover {
   margin-bottom: 8px;
 }
 
-/* =========================
-   SERVICES
-========================= */
-
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -642,10 +638,6 @@ nav a:hover {
 
   cursor: pointer;
 }
-
-/* =========================
-   FOOTER
-========================= */
 
 footer {
   background: #f8fbff;
