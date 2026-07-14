@@ -1,7 +1,3 @@
-// =========================
-// MOBILE MENU
-// =========================
-
 const menuBtn = document.querySelector(".menu-btn");
 const nav = document.querySelector("nav");
 
@@ -16,10 +12,6 @@ if(menuBtn){
     });
 
 }
-
-// =========================
-// SMOOTH SCROLL
-// =========================
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
@@ -43,10 +35,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 
 });
-
-// =========================
-// NAVBAR SCROLL EFFECT
-// =========================
 
 const navbar = document.querySelector(".navbar");
 
@@ -76,10 +64,6 @@ window.addEventListener("scroll", () => {
     }
 
 });
-
-// =========================
-// TYPING EFFECT
-// =========================
 
 const typingElement = document.querySelector(".typing");
 
@@ -161,10 +145,6 @@ typeEffect();
 
 }
 
-// =========================
-// SCROLL REVEAL
-// =========================
-
 const revealElements = document.querySelectorAll(
 
     ".about-card, .service-card, .project-card, .skill-card, .contact-box"
@@ -200,10 +180,6 @@ revealElements.forEach(item=>{
     observer.observe(item);
 
 });
-
-// =========================
-// COUNTER ANIMATION
-// =========================
 
 const counters = document.querySelectorAll(".counter");
 
@@ -264,10 +240,6 @@ counterObserver.observe(counter);
 
 });
 
-// =========================
-// FLOATING PARTICLES
-// =========================
-
 const particleContainer =
 document.createElement("div");
 
@@ -298,10 +270,6 @@ particle
 );
 
 }
-
-// =========================
-// PROJECT CARD HOVER
-// =========================
 
 document.querySelectorAll(".project-card")
 .forEach(card=>{
@@ -335,10 +303,6 @@ card.style.transform =
 });
 
 });
-
-// =========================
-// CURRENT YEAR
-// =========================
 
 const year = document.querySelector(".year");
 
