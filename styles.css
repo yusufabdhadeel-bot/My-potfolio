@@ -466,6 +466,10 @@ textarea {
   box-shadow: var(--shadow-soft);
 }
 
+.skill-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.88), rgba(223, 241, 253, 0.72));
+}
+
 .icon-wrap {
   width: 56px;
   height: 56px;
@@ -516,6 +520,35 @@ textarea {
 .project-info h3 {
   font-size: 1.5rem;
   margin-bottom: 0.7rem;
+}
+
+.project-kicker {
+  display: block;
+  margin-bottom: 0.55rem;
+  color: var(--sky-600);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.project-featured {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: stretch;
+}
+
+.project-featured img {
+  height: 100%;
+  min-height: 330px;
+}
+
+.project-featured .project-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
 }
 
 .project-links {
@@ -811,6 +844,16 @@ textarea {
   .services-grid,
   .stats-grid {
     grid-template-columns: 1fr;
+  }
+
+  .project-featured {
+    grid-column: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .project-featured img {
+    height: 280px;
+    min-height: 0;
   }
 
   .hero {
