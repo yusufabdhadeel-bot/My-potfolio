@@ -1,314 +1,148 @@
-const menuBtn = document.querySelector(".menu-btn");
-const nav = document.querySelector("nav");
+const loaderScreen = document.querySelector('.loader-screen');
+const signatureText = document.querySelector('.loader-signature-text');
+const revealElements = document.querySelectorAll('.reveal');
+const counters = document.querySelectorAll('[data-target]');
+const yearElement = document.querySelector('.year');
 
-if(menuBtn){
-
-    menuBtn.addEventListener("click", () => {
-
-        nav.classList.toggle("active");
-
-        menuBtn.classList.toggle("active");
-
-    });
-
+if (yearElement) {
+  yearElement.textContent = new Date().getFullYear();
 }
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+function runLoaderSequence() {
+  const loaderTimeline = gsap.timeline({ defaults: { ease: 'power3.inOut' } });
 
-    anchor.addEventListener("click", function(e){
+  loaderTimeline
+    .to('.loader-name-yusuf', {
+      opacity: 1,
+      y: 0,
+      duration: 1.1,
+      ease: 'power3.out'
+    })
+    .to('.loader-name-yusuf', {
+      opacity: 0,
+      y: -24,
+      filter: 'blur(14px)',
+      duration: 0.8,
+      delay: 0.5
+    })
+    .call(() => {
+      const name = 'Abdhadeel';
+      let index = 0;
 
-        e.preventDefault();
+      signatureText.textContent = '';
 
-        const target = document.querySelector(
-            this.getAttribute("href")
-        );
+      const typingInterval = setInterval(() => {
+        signatureText.textContent = name.slice(0, index + 1);
+        index += 1;
 
-        if(target){
-
-            target.scrollIntoView({
-                behavior:"smooth",
-                block:"start"
-            });
-
+        if (index >= name.length) {
+          clearInterval(typingInterval);
+          gsap.to('.loader-cursor', { opacity: 0, duration: 0.3 });
         }
-
+      }, 140);
+    })
+    .to('.loader-progress', {
+      width: '100%',
+      duration: 2.2,
+      ease: 'power2.out'
+    }, 0.4)
+    .to(loaderScreen, {
+      opacity: 0,
+      duration: 0.9,
+      delay: 0.9,
+      onComplete: () => loaderScreen.classList.add('is-hidden')
     });
+}
 
-});
+if (window.gsap && loaderScreen) {
+  gsap.registerPlugin(ScrollTrigger);
+  runLoaderSequence();
+}
 
-const navbar = document.querySelector(".navbar");
-
-window.addEventListener("scroll", () => {
-
-    if(window.scrollY > 50){
-
-        navbar.style.background =
-        "rgba(255,255,255,0.9)";
-
-        navbar.style.backdropFilter =
-        "blur(20px)";
-
-        navbar.style.boxShadow =
-        "0 10px 30px rgba(0,0,0,0.08)";
-
-    }
-
-    else{
-
-        navbar.style.background =
-        "rgba(255,255,255,0.7)";
-
-        navbar.style.boxShadow =
-        "none";
-
-    }
-
-});
-
-const typingElement = document.querySelector(".typing");
-
-if(typingElement){
-
-const words = [
-
-    "Frontend Developer",
-    "Website Designer",
-    "Freelancer",
-    "CodePrince Digital"
-
-];
-
-let wordIndex = 0;
-let charIndex = 0;
-let deleting = false;
-
-function typeEffect(){
-
-    const currentWord = words[wordIndex];
-
-    if(!deleting){
-
-        typingElement.textContent =
-        currentWord.substring(
-            0,
-            charIndex + 1
-        );
-
-        charIndex++;
-
-        if(charIndex === currentWord.length){
-
-            deleting = true;
-
-            setTimeout(typeEffect,1500);
-
-            return;
-
+if (revealElements.length && window.gsap) {
+  revealElements.forEach((element) => {
+    gsap.fromTo(
+      element,
+      { opacity: 0, y: 48 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: element,
+          start: 'top 85%'
         }
-
-    }
-
-    else{
-
-        typingElement.textContent =
-        currentWord.substring(
-            0,
-            charIndex - 1
-        );
-
-        charIndex--;
-
-        if(charIndex === 0){
-
-            deleting = false;
-
-            wordIndex++;
-
-            if(wordIndex >= words.length){
-
-                wordIndex = 0;
-
-            }
-
-        }
-
-    }
-
-    setTimeout(
-        typeEffect,
-        deleting ? 60 : 120
+      }
     );
-
+  });
 }
 
-typeEffect();
+if (counters.length && window.gsap) {
+  counters.forEach((counter) => {
+    const target = Number(counter.dataset.target || 0);
 
-}
-
-const revealElements = document.querySelectorAll(
-
-    ".about-card, .service-card, .project-card, .skill-card, .contact-box"
-
-);
-
-const observer = new IntersectionObserver(
-
-(entries)=>{
-
-    entries.forEach(entry=>{
-
-        if(entry.isIntersecting){
-
-            entry.target.classList.add("show");
-
+    gsap.fromTo(
+      counter,
+      { textContent: 0 },
+      {
+        textContent: target,
+        duration: 1.5,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: counter,
+          start: 'top 90%'
+        },
+        onUpdate: function () {
+          counter.textContent = Number(this.targets()[0].textContent).toFixed(0);
         }
+      }
+    );
+  });
+}
 
+document.querySelector('.contact-form')?.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const button = event.currentTarget.querySelector('button');
+  const originalText = button.textContent;
+
+  button.textContent = 'Message Sent';
+  button.disabled = true;
+
+  setTimeout(() => {
+    button.textContent = originalText;
+    button.disabled = false;
+    event.currentTarget.reset();
+  }, 1800);
+});
+
+const navLinks = document.querySelectorAll('a[href^="#"]');
+navLinks.forEach((link) => {
+  link.addEventListener('click', (event) => {
+    const targetId = link.getAttribute('href');
+    const target = document.querySelector(targetId);
+
+    if (!target) return;
+
+    event.preventDefault();
+    window.scrollTo({
+      top: target.getBoundingClientRect().top + window.scrollY - 80,
+      behavior: 'smooth'
     });
-
-},
-
-{
-    threshold:0.15
-}
-
-);
-
-revealElements.forEach(item=>{
-
-    item.classList.add("hidden");
-
-    observer.observe(item);
-
+  });
 });
 
-const counters = document.querySelectorAll(".counter");
+if (!window.gsap && loaderScreen) {
+  const fallbackText = 'Abdhadeel';
+  let index = 0;
 
-const counterObserver = new IntersectionObserver(
+  const tickLoader = setInterval(() => {
+    signatureText.textContent = fallbackText.slice(0, index + 1);
+    index += 1;
 
-(entries)=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-const counter = entry.target;
-
-const target = +counter.dataset.target;
-
-let count = 0;
-
-const update = ()=>{
-
-const increment = target / 60;
-
-count += increment;
-
-if(count < target){
-
-counter.innerText =
-Math.ceil(count);
-
-requestAnimationFrame(update);
-
-}
-
-else{
-
-counter.innerText = target;
-
-}
-
-};
-
-update();
-
-}
-
-});
-
-},
-
-{
-threshold:0.5
-}
-
-);
-
-counters.forEach(counter=>{
-
-counterObserver.observe(counter);
-
-});
-
-const particleContainer =
-document.createElement("div");
-
-particleContainer.classList.add("particles");
-
-document.body.appendChild(
-particleContainer
-);
-
-for(let i=0;i<20;i++){
-
-const particle =
-document.createElement("span");
-
-particle.classList.add("particle");
-
-particle.style.left =
-Math.random()*100 + "%";
-
-particle.style.animationDelay =
-Math.random()*10 + "s";
-
-particle.style.animationDuration =
-(8 + Math.random()*8) + "s";
-
-particleContainer.appendChild(
-particle
-);
-
-}
-
-document.querySelectorAll(".project-card")
-.forEach(card=>{
-
-card.addEventListener("mousemove",(e)=>{
-
-const rect =
-card.getBoundingClientRect();
-
-const x =
-e.clientX - rect.left;
-
-const y =
-e.clientY - rect.top;
-
-card.style.transform =
-
-`perspective(1000px)
-rotateX(${(y-150)/20}deg)
-rotateY(${-(x-150)/20}deg)
-translateY(-10px)`;
-
-});
-
-card.addEventListener("mouseleave",()=>{
-
-card.style.transform =
-
-"perspective(1000px) rotateX(0) rotateY(0)";
-
-});
-
-});
-
-const year = document.querySelector(".year");
-
-if(year){
-
-year.textContent =
-new Date().getFullYear();
-
+    if (index >= fallbackText.length) {
+      clearInterval(tickLoader);
+      setTimeout(() => loaderScreen.classList.add('is-hidden'), 1200);
+    }
+  }, 140);
 }
